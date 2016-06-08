@@ -12,10 +12,10 @@ Provisions are made for system accounts, obviously root and postfix aren’t goi
 === WHAT YOU ACTUALLY WANT TO KNOW ===
 
 -Dependences-
-python 2.7
-python hostlist
-ROCKS Cluster
->= SLURM 15 Scheduler and Resource Manager (may work with older SLURM but not tested)
+python 2.7, 
+python hostlist, 
+ROCKS Cluster, 
+SLURM 15 (or greater) Scheduler and Resource Manager (may work with older SLURM but not tested)
 
 -How to run-
 Create a bash script that runs thanatos.py. Modify it to do whatever logging you would like, we just copy the cleanup script that is created to a separate log file if it’s larger than one line (the line that deletes the cleanup script). Place this script in a CRON job. Watch your cluster run much smoother because it’s not wasting resources running processes that should have died long ago. Yes folks, it’s that simple.
