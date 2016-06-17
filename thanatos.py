@@ -80,7 +80,7 @@ def main():
 				if user not in currentlyRunningJobsDict[node]:
 					cleanupscript.write("ssh " + node + " \"pkill -9 -u " + user + "\"\n")
 			except KeyError: #Basically what has happened here is the user has a node allocated to them, but they're currently not running processes on it, since that's legit we'll just ignore it
-				cleanupscript.write("Error with: " + node)
+				#cleanupscript.write("Error with: " + node + "\n") #This is now in comments because BASH wants to execute it as a command and clearly that's not possible. Once we get better logging in place we can reenable this
 				continue
 
 	cleanupscript.write("rm -f cleanupscript.sh\n")
